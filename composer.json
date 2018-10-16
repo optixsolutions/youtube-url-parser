@@ -1,0 +1,23 @@
+{
+    "name": "optix/youtube-url-parser",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jack Robertson",
+            "email": "jack@optixsolutions.co.uk"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Optix\\YoutubeUrlParser\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Optix\\YoutubeUrlParser\\Tests\\": "tests"
+        }
+    }
+}

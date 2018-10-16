@@ -15,9 +15,7 @@ class UrlParser
 
     protected function parse($url)
     {
-        $pattern = '/(?:https?:\/\/)?(?:www\.)?(?:youtu.be\/|youtube\.com\/(?:watch(?:\/|\/?\?(?:\S*&)?v=)|embed\/))([\w\d]+)/';
-
-        $this->isValid = preg_match($pattern, $url, $matches);
+        $this->isValid = !! preg_match($this->getPattern(), $url, $matches);
 
         if (isset($matches[0])) {
             $this->videoId = $matches[0];
@@ -37,5 +35,10 @@ class UrlParser
     public function getEmbedUrl()
     {
         return 'https://www.youtube.com/embed/' . $this->videoId;
+    }
+
+    protected function getPattern()
+    {
+        return '/(?:https?:\/\/)?(?:www\.)?(?:youtu.be\/|youtube\.com\/(?:watch(?:\/|\/?\?(?:\S*&)?v=)|embed\/))([\w\d]+)/';
     }
 }
