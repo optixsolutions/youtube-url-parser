@@ -17,8 +17,8 @@ class UrlParser
     {
         $this->isValid = !! preg_match($this->getPattern(), $url, $matches);
 
-        if (isset($matches[0])) {
-            $this->videoId = $matches[0];
+        if (isset($matches[1])) {
+            $this->videoId = $matches[1];
         }
     }
 
